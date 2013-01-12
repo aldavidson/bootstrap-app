@@ -68,5 +68,10 @@ module Agents
     
     # don't initialize the app when precompiling assets
     config.assets.initialize_on_precompile = false
+    
+    # set haml as default generated view language
+    config.generators do |g| 
+      g.template_engine :haml 
+    end
   end
 end
