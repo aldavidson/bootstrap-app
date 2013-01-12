@@ -1,0 +1,8 @@
+
+application:
+  name: Agents
+  domain: agents.com
+
+email:
+  addresses:
+    support: support@agents.com

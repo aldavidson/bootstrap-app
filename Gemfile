@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
-
+gem 'rake'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+# stop warnings about could not determine content-length of response under rails s (webrick)
+gem 'webrick', '1.3.1'
 
 gem 'mysql2'
 
@@ -11,7 +14,12 @@ gem 'haml'
 gem 'devise'
 gem 'kaminari'
 
+# simpler form  builder
+gem 'simple_form'
 
+
+# provides the Settings object
+gem "rails_config"
 
 # Gems used only for assets and not required
 # in production environments by default.

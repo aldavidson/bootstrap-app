@@ -1,0 +1,14 @@
+= link_to t('nav.home'), root_path, :class => 'brand'
+%ul.nav
+  - if user_signed_in?
+    %li
+      = link_to t('nav.logout'), destroy_user_session_path, :method=>'delete'
+  - else
+    %li
+      = link_to t('nav.login'), new_user_session_path
+  - if user_signed_in?
+    %li
+      = link_to t('nav.edit_account'), edit_user_registration_path
+  - else
+    %li
+      = link_to t('nav.sign_up'), new_user_registration_path
