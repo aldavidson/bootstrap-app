@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-
+  
+  # Twitter bootstrap breadcrumb trail
+  add_breadcrumb :index, :root_path
+  
   before_filter :set_title
   
   helper_method :app_name
@@ -16,7 +19,7 @@ class ApplicationController < ActionController::Base
     end
     
     def i18n_scope
-      [params[:controller], params[:action]]
+      [params[:controller].gsub('/', '.'), params[:action]]
     end
     
     def app_name

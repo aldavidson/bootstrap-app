@@ -1,4 +1,3 @@
 module ApplicationHelper
-  protected 
   
 end

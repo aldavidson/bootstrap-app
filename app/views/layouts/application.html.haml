@@ -19,7 +19,7 @@
 
 
   %body
-    .navbar.navbar-fluid-top
+    %nav.navbar.navbar-fluid-top
       .navbar-inner
         .container-fluid
           %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
@@ -41,6 +41,8 @@
               %li= link_to "Link 2", "/path2"
               %li= link_to "Link 3", "/path3"
         .span9
+          %h1= @header
+          = render_breadcrumbs
           = bootstrap_flash
           = yield
     
