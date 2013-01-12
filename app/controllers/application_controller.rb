@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_title
   
+  helper_method :app_name
+  
   protected
   
     def set_title
