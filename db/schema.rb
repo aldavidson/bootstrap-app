@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130824095641) do
+ActiveRecord::Schema.define(:version => 20130824104434) do
 
   create_table "accounts", :force => true do |t|
     t.datetime "created_at",         :null => false
@@ -22,6 +22,32 @@ ActiveRecord::Schema.define(:version => 20130824095641) do
   end
 
   add_index "accounts", ["account_type"], :name => "ix_acc_account_type"
+
+  create_table "agencies", :force => true do |t|
+    t.string   "name"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "town"
+    t.string   "country_code"
+    t.string   "telephone"
+    t.string   "postcode"
+    t.integer  "created_by_user_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "agents", :force => true do |t|
+    t.integer  "agency_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "job_title"
+    t.string   "work_telephone"
+    t.string   "mobile"
+    t.string   "email"
+    t.integer  "created_by_user_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
