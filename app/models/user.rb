@@ -11,5 +11,11 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   belongs_to  :account
+
+  before_create{ |instance| instance.workflow.before_create }
   
+  def workflow
+    Workflows::UserWorkflow.new(self)
+  end
+  #memoize :workflow
 end

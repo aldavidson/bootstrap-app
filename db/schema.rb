@@ -11,15 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130824091354) do
+ActiveRecord::Schema.define(:version => 20130824095641) do
 
   create_table "accounts", :force => true do |t|
-    t.string   "type"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "created_by_user_id"
     t.string   "name"
+    t.string   "account_type"
   end
+
+  add_index "accounts", ["account_type"], :name => "ix_acc_account_type"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
