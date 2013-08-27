@@ -20,6 +20,9 @@ gem 'simple_form'
 
 gem 'twitter-bootstrap-rails'
 
+# provides the memoize method
+# gem 'memoist'
+
 
 # provides the Settings object
 gem "rails_config"
